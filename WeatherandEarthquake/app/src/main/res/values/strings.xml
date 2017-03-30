@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Statistik Gempa</string>
+
+    <string name="title1">Good Content</string>
+    <string name="desc1">Konten Berasal Dari Sumber Yang Terpercaya</string>
+
+    <string name="title2">Super Lengkap</string>
+    <string name="desc2">Lengkap Dengan Keterangan Gempa</string>
+
+    <string name="title3">Up to Date</string>
+    <string name="desc3">Konten Yang Selalu Update Setiap Hari</string>
+
+    <string name="title4">Have Fun</string>
+    <string name="desc4">Selamat Menggunakan Aplikasi Ini</string>
+
+    <string name="next">NEXT</string>
+    <string name="prev">SKIP</string>
+    <string name="start">GOT IT</string>
+    <string name="title_activity_menu_utama">Home</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_detail">Detail Informasi</string>
+</resources>

@@ -1,0 +1,21 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.abraham24.weatherandearthquake.Fragments.RealHomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+<!--<android.support.v7.widget.Toolbar-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="60dp"-->
+    <!--android:id="@+id/toolbarReal"-->
+    <!--android:background="@color/colorPrimary"></android.support.v7.widget.Toolbar>-->
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:id="@+id/recyclerhome"
+        />
+
+</RelativeLayout>

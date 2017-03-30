@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ef0216</color>
+    <color name="colorPrimaryDark">#da262c</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <!--warna untuk background intro-->
+    <color name="screen_1">#30909f</color>
+    <color name="screen_2">#30909f</color>
+    <color name="screen_3">#30909f</color>
+    <color name="screen_4">#30909f</color>
+
+    <!--warna dot atau titik ketika pindah ke tampilan berikutnya atau sebelumnya-->
+    <color name="dot_dark_screen1">#000</color>
+    <color name="dot_dark_screen2">#a2d499</color>
+    <color name="dot_dark_screen3">#9c2626</color>
+    <color name="dot_dark_screen4">#077344</color>
+
+    <!--warna ketika tampil intro-->
+    <color name="dot_light_screen1">#e21010</color>
+    <color name="dot_light_screen2">#1014e2</color>
+    <color name="dot_light_screen3">#d710e2</color>
+    <color name="dot_light_screen4">#1541d1</color>
+
+    <!--array untuk setting warna titik yang aktif-->
+    <array name="array_dot_activ">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+    </array>
+    <array name="array_dot_noactiv">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+
+    </array>
+
+
+</resources>
