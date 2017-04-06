@@ -56,15 +56,7 @@ class CustomListAdapter extends RecyclerView.Adapter<CustomListAdapter.ViewHolde
         holder.cardItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent a = new Intent(v.getContext(), DetailActivity.class);
-                a.putExtra("img",list_data.get(position).get("img"));
-                a.putExtra("lintang_bujur",list_data.get(position).get("lintang_bujur"));
-                a.putExtra("kedalaman",list_data.get(position).get("kedalaman"));
-                a.putExtra("magnitudo",list_data.get(position).get("magnitudo"));
-                a.putExtra("wilayah",list_data.get(position).get("wilayah"));
-                a.putExtra("waktu",list_data.get(position).get("waktu"));
-
-                v.getContext().startActivity(a);
+              
 
             }
         });
