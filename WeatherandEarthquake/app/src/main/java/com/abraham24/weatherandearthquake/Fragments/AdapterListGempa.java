@@ -67,15 +67,22 @@ public List<KumpulanGson.KumpulanData> tangkaplistpertama;
             Log.d("dirasakan " + position + " index " + a, tangkaplistpertama.get(position).dirasakan.get(a));
 
         }
-       String[] dataDirasakan = tangkaplistpertama.get(position).dirasakan.toArray(new String[0]);
-        Log.d("String dirasakan" + position, Arrays.toString(dataDirasakan));
-        ArrayAdapter<String> dirasakanListAdapter = new ArrayAdapter<String>(context1,android.R.layout.simple_expandable_list_item_1, dataDirasakan);
-        dirasakanListAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        String tangkap = tangkaplistpertama.get(position).dirasakan.toString();
+        String abcd = tangkap.substring(1,tangkap.length()-1);
+        String aaa = abcd.replace(",","\n");
+        holder.textisidirasakan.setText(aaa);
+
+//       String[] dataDirasakan = tangkaplistpertama.get(position).dirasakan.toArray(new String[0]);
+//        Log.d("String dirasakan" + position, Arrays.toString(dataDirasakan));
+//        ArrayAdapter<String> dirasakanListAdapter = new ArrayAdapter<String>(context1,android.R.layout.simple_expandable_list_item_1, dataDirasakan);
+//        dirasakanListAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+       // holder.listDirasakan.setAdapter(dirasakanListAdapter);
         //  List diii = tangkaplistpertama.get(a).dirasakan;
         //   for (int d = 0 ; d <diii.size();d ++)
         //     Log.d("dirasakan", String.valueOf(diii.get(d)));
      //   dgsg[a] = String.valueOf(tangkaplistpertama.get(a).dirasakan);
-        holder.listDirasakan.setAdapter(dirasakanListAdapter);
+
         holder.textKedalaman2.setText("Kedalaman Gempa: " + tangkaplistpertama.get(position).kedalamangempadirasakan);
         holder.textWilayah2.setText("Wilayah Gempa : " + tangkaplistpertama.get(position).wilayahgempadirasakan);
         holder.textWaktu2.setText("Waktu Gempa : " + tangkaplistpertama.get(position).waktudirasakan);
@@ -100,8 +107,8 @@ public List<KumpulanGson.KumpulanData> tangkaplistpertama;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textWaktu2, textWilayah2, textAmplitudo2, textKedalaman2, textLintang2;
-        Spinner listDirasakan;
+        TextView textWaktu2, textWilayah2, textAmplitudo2, textKedalaman2, textLintang2, textisidirasakan;
+//        Spinner listDirasakan;
         CardView cardView2;
         ImageView imageitem2;
 
@@ -110,11 +117,12 @@ public List<KumpulanGson.KumpulanData> tangkaplistpertama;
             super(itemView);
 
             textWaktu2 = (TextView)itemView.findViewById(R.id.textWaktu2);
+            textisidirasakan = (TextView)itemView.findViewById(R.id.isigempadirasakan);
             textWilayah2 = (TextView)itemView.findViewById(R.id.textWilayah2);
             textLintang2 = (TextView)itemView.findViewById(R.id.textLintang2);
             textAmplitudo2 = (TextView)itemView.findViewById(R.id.textMagnitudo2);
             textKedalaman2 = (TextView)itemView.findViewById(R.id.textKedalaman2);
-            listDirasakan = (Spinner) itemView.findViewById(R.id.lvdirasakan);
+//            listDirasakan = (Spinner) itemView.findViewById(R.id.lvdirasakan);
             imageitem2 = (ImageView)itemView.findViewById(R.id.imageitem2);
             cardView2 = (CardView)itemView.findViewById(R.id.carditemearthquake);
 
