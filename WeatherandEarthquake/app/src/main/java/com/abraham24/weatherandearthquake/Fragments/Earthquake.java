@@ -36,7 +36,7 @@ public class Earthquake extends Fragment {
 RecyclerView recyclerView;
     RequestQueue requestQueue;
     StringRequest stringRequest;
-//    ArrayList<HashMap<String,String>>list_gempa;
+    //penganalan Kelas KumpulanGson
     KumpulanGson kumpulangsonclass;
 
     public Earthquake() {
@@ -48,53 +48,34 @@ RecyclerView recyclerView;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_earthquake,container,false);
-
+        //Inisialisasi/Casting widget RecyclerView
         recyclerView = (RecyclerView)v.findViewById(R.id.recyclerearthquake);
+        //Mengatur tampilan List/RecyclerView
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        //setLayoutManager dari pengaturan tampilan dia atas
         recyclerView.setLayoutManager(linearLayoutManager);
-
+        //menyimpan url ke dalam String
         String infogempayangdirasakan = "http://ibacor.com/api/bmkg?view=gempa-dirasakan&k=a279f8bcfd07ea74d1992024d765749e";
-
+        //setting RequestQueue
         requestQueue = Volley.newRequestQueue(getActivity());
 
-  //      list_gempa =new ArrayList<> ();
-
+ 
+        //instansiasi StringRequest dengan Method GET + url dari String sebelumnya
         stringRequest = new StringRequest(Request.Method.GET, infogempayangdirasakan, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                //menampilkan response JSON di Log Debug
                 Log.d("response", response);
-
+                //Instansiasi builder gson 
                 GsonBuilder builder = new GsonBuilder();
+                //untuk membuat GSON sebagai JSON parser
                 Gson gson = builder.create();
-
+                //pengambilan parsing GSON dari kelas yang terdapat parsing
                 kumpulangsonclass = gson.fromJson(response,KumpulanGson.class);
            //    KumpulanGson datas = gson.fromJson(response,KumpulanGson.class);
 
 
-//                try {
-//                    JSONObject object = new JSONObject(response);
-//                    JSONArray array = object.getJSONArray("data");
-//
-//
-//                    for (int a = 0; a < array.length(); a++) {
-//                        JSONObject json = array.getJSONObject(a);
-//                        JSONArray array2 = json.getJSONArray("dirasakan");
-//
-//                        for (int e = 0 ; e <array2.length();e++){
-//                         String tangkap = array2.getString(e);
-//                        }
-//
-//                        //parameter HashMap utk menangkap variabel JSON
-//                        HashMap<String, String> map = new HashMap<String, String>();
-//                        //pengambilan variabel JSON
-//                        map.put("waktu", json.getString("waktu"));
-//                        map.put("lintang_bujur", json.getString("lintang_bujur"));
-//                        map.put("magnitudo", json.getString("magnitudo"));
-//                        map.put("kedalaman", json.getString("kedalaman"));
-//                        map.put("wilayah", json.getString("wilayah"));
-//                        map.put("img", json.getString("img"));
-//                        //memasukkan data ke ArrayList memakai variabel list_data
-//                        list_gempa.add(map);
+
 
 
 
@@ -105,12 +86,9 @@ RecyclerView recyclerView;
                         recyclerView.setAdapter(adapter);
 
 
-//                } catch (JSONException e) {
-//
-//                    Toast.makeText(getActivity(), "Gagal parsing JSON", Toast.LENGTH_SHORT).show();
-//                    e.printStackTrace();
-//                }
+
             }
+            //pengambilan aksi jika Volley Error mengambil data
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
